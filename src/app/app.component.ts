@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ccfrontend';
+  active = 0;
+  // tslint:disable-next-line:typedef
+  onTabChange(e: any) {
+    console.log(e);
+  }
 }

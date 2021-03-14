@@ -1,0 +1,22 @@
+<div style="padding-top: 50px">
+  <h2 mat-dialog-title>List of Valid Credit Cards: </h2>
+
+  <div class="container" >
+    <table class="table table-striped " >
+      <thead>
+      <tr>
+        <th>Card Number</th>
+        <th>Country</th>
+        <th>Date added</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let card of creditCards">
+        <td>{{ card.cardNumber }}</td>
+        <td>{{ card.country }}</td>
+        <td>{{ card.dateTimeAdded }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

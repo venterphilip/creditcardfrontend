@@ -1,0 +1,22 @@
+<div style="padding-top: 50px">
+  <h2 mat-dialog-title style="padding-bottom: 15px">List of all countries: </h2>
+
+  <div class="container" >
+    <table class="table table-striped " >
+      <thead>
+      <tr>
+        <th>Country</th>
+        <th>Country Code</th>
+        <th>Banned</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of countries" (click)="openDialog(country.countryName, country.countryCode)">
+        <td>{{ country.countryName }}</td>
+        <td>{{ country.countryCode }}</td>
+        <td>{{ country.banned }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

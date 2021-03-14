@@ -5,22 +5,22 @@ import Card from '../models/Card';
 import CreditCard from '../models/CreditCard';
 
 @Injectable()
-export class CardsService {
+export class CardService {
   cardsUrl: string;
   constructor(private http: HttpClient) {
     this.cardsUrl = 'http://localhost:8080';
   }
 
-  public findAllCards(): Observable<Card[]> {
+  public findAllCards(): Observable<CreditCard[]> {
     return this.http.get<CreditCard[]>(this.cardsUrl + '/card');
   }
 
-  public findAllCardsInQueue(): Observable<Card[]> {
+  public findAllCardsInQueue(): Observable<CreditCard[]> {
     return this.http.get<CreditCard[]>(this.cardsUrl + '/card/queue');
   }
 
-  public addCard(card: Card): string {
-    return this.http.post()<string>(this.cardsUrl + '/card/load', card);
+  public addCard(card: Card): any {
+    return this.http.post<string>(this.cardsUrl + '/card/load', card);
   }
 
 }

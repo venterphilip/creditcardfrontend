@@ -1,0 +1,42 @@
+<div style="padding-top: 50px">
+
+
+  <div>
+    <h2 mat-dialog-title>Queue to be processed every 30 seconds: </h2>
+
+    <div class="container" >
+      <table class="table table-striped " >
+        <thead>
+        <tr>
+          <th>Card Number</th>
+          <th>Date added</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let card of creditCards">
+          <td>{{ card.cardNumber }}</td>
+          <td>{{ card.dateTimeAdded }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+
+    <h2 mat-dialog-title>Please enter card number below to add and verify</h2>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Credit Card Number: </mat-label>
+      <mat-hint *ngIf="checkName()" style="color: red">Needs to be only numbers</mat-hint>
+      <input matInput placeholder="Ex. 1234 2345 3456 4567" value="" [(ngModel)]="name">
+    </mat-form-field>
+
+    <div style="padding-bottom: 10px">
+      <button [disabled]="!isCardValid()" mat-raised-button color="accent" (click)="onClick()">Submit</button>
+    </div>
+  </div>
+
+
+
+</div>
