@@ -14,12 +14,14 @@ export class BannedcountriesComponent implements OnInit {
   countries: Country[] | undefined;
   constructor(private countryService: CountryService, public dialog: MatDialog) { }
 
+  // get data from backend
   ngOnInit(): void {
     this.countryService.findAllCountries().subscribe(data => {
       this.countries = data;
     });
   }
 
+  // open dialog to ban/unban country and refresh list
   openDialog(country: string, countryCode: string): void {
     const dialogRef = this.dialog.open(ModalCountriesComponent, {
       width: '250px',
